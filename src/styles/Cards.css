@@ -1,0 +1,15 @@
+.card {
+  width: 40rem !important;
+}
+
+.card:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.planet-card {
+  height: 54rem !important;
+}
+
+.sp{
+    font-family: 'Star Wars';
+}

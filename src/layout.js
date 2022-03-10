@@ -3,6 +3,7 @@ import ScrollToTop from './components/scrollToTop'
 import injectContext from './store/appContext';
 
 // Views
+import DebugMenu from './views/DebugMenu';
 import Details from './views/Details';
 import Home from './views/Home';
 
@@ -20,6 +21,7 @@ const Layout = () => {
 						<Route exact path="/" element={<Home />}></Route>
 						<Route exact path="/Home" element={<Home />}></Route>
 						<Route exact path="/Details" element={<Details />}></Route>
+						<Route exact path="/Debug-menu" element={<DebugMenu />}></Route>
 					</Routes>
 				</ScrollToTop>
 			</BrowserRouter>
