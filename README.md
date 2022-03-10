@@ -10,3 +10,5 @@
 2. Create functionality to add any entity to a favorites list (Aka. Add to cart feature) that updates in real time.
 
 # Preview
+
+https://622a8c8e3e97dc15c22051ff--star-wars-blog-by-umikami.netlify.app/
