@@ -1,9 +1,20 @@
+import { useEffect, useState } from "react";
 import useStore from "../store/zustand";
-import "../styles/Navbar.css"
+import "../styles/Navbar.css";
 
 const Navbar = () => {
   const store = useStore();
-  let favoriteEntityList = [...new Set(store.favorite_entity)];
+
+	const [favoritesList, setFavoritesList] = useState([]);
+	
+	useEffect(()=>{
+		setFavoritesList([...new Set(store.favorite_entity)]);
+	}, [setFavoritesList, store.favorite_entity])
+
+  const deleteItem = (targetIndex) => {
+		// updates state of the list in the store
+		store.updateFavoriteEntity(targetIndex)
+	};
 
   return (
     <nav className="navbar navbar-light bg-light container">
@@ -25,7 +36,7 @@ const Navbar = () => {
             aria-expanded="false"
           >
             <p className="dropdown-name">Favorites</p>
-            <div className="favCount">{favoriteEntityList.length}</div>
+            <div className="favCount">{favoritesList.length}</div>
           </a>
 
           <ul
@@ -33,18 +44,24 @@ const Navbar = () => {
             aria-labelledby="navbarDropdown"
             onClick={(e) => e.stopPropagation()}
           >
-            {favoriteEntityList.length == 0
-              ? <span className="d-flex justify-content-center dropdown-text-content">(empty)</span>
-              : favoriteEntityList.map((name, index) => {
-                  return (
-                    <li key={index}>
-                      <div className="favorite-wrap d-flex align-items-center justify-content-between p-2">
-                        <p className="dropdown-text-content m-0 ">{name}</p>
-                        <i className="fa-solid fa-trash-can dropdown-text-content" />
-                      </div>
-                    </li>
-                  );
-                })}
+            {favoritesList.length == 0 ? (
+              <span className="d-flex justify-content-center dropdown-text-content">
+                (empty)
+              </span>
+            ) : (
+              favoritesList.map((name, index) => {
+                return (
+                  <li key={index}>
+                    <div className="favorite-wrap d-flex align-items-center justify-content-between p-2">
+                      <p className="dropdown-text-content m-0 ">{name}</p>
+                      <span onClick={()=>deleteItem(index)}>
+                        <i className="fa-solid fa-trash-can dropdown-text-content trash" />
+                      </span>
+                    </div>
+                  </li>
+                );
+              })
+            )}
           </ul>
         </div>
       </div>

@@ -28,3 +28,7 @@
 .dropdown-menu{
     min-width: 20rem;
 }
+
+.fa-trash-can:hover{
+    cursor: pointer;
+}

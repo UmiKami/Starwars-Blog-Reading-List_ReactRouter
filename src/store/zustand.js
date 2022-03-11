@@ -24,6 +24,11 @@ const useStore = create((set, get) => ({
     set({
       favorite_entity: get().favorite_entity.concat(name)
     })
+  },
+  updateFavoriteEntity: (targetIndex) => {
+    set({
+      favorite_entity: get().favorite_entity.filter((e, currentIndex) => currentIndex != targetIndex)
+    })
   }
 }));
 
