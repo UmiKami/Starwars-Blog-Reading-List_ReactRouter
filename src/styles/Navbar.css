@@ -1,0 +1,30 @@
+.favCount{
+    background-color: gray;
+    color: white;
+    border-radius: .5rem;
+
+    padding: .5rem;
+    height: 2.0rem;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 1.6rem;
+}
+
+.nav-link{
+    font-size: 2.2rem;
+}
+
+.dropdown-name{
+    margin: 0;
+    margin-right: .5rem;
+}
+
+.dropdown-text-content{
+    font-size: 1.8rem;
+}
+
+.dropdown-menu{
+    min-width: 20rem;
+}

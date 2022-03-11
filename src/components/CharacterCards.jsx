@@ -7,12 +7,14 @@ const CharacterCards = () => {
 
   const [people, setPeople] = useState([]);
 
+  const getFavoriteEntity = (name) => {
+    store.addFavoriteEntity(name)
+  }
+
   useEffect(() => {
 
     setPeople(store.people);
   }, [store.people]);
-
-  console.log(people);
   
   return (
     <>
@@ -41,10 +43,10 @@ const CharacterCards = () => {
                   <span className="d-block">{`Hair-Color: ${hair_color}`}</span>
                   <span className="d-block">{`Eye-Color: ${eye_color}`}</span>
                 </p>
-                <a href="/#" className="btn btn-outline-primary ">
+                <a href="/#" className="btn btn-outline-primary">
                   Learn More!
                 </a>
-                <a href="/#" className="btn btn-outline-warning">
+                <a href="/#" className="btn btn-outline-warning" onClick={()=>getFavoriteEntity(name)}>
                   Add Favorite
                 </a>
               </div>

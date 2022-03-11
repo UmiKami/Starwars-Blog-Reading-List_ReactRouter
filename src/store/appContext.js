@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 
 import useStore from "./zustand.js";
 
@@ -74,13 +74,12 @@ const injectContext = (PassedComponent) => {
        * state.actions.loadSomeData(); <---- calling this function from the flux.js actions
        *
        **/
-      if(!hasLoaded){
-        hasLoaded = true
+      if (!hasLoaded) {
+        hasLoaded = true;
         loadPeopleData(state);
         loadVehicleData(state);
         loadPlanets(state);
       }
-
     }, [state]);
 
     // The initial value for the context is not null anymore, but the current state of this component,

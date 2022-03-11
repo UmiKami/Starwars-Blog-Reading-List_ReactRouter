@@ -4,6 +4,7 @@ const useStore = create((set, get) => ({
   people: [],
   vehicles: [],
   planets: [],
+  favorite_entity: [],
   addPeople: (person) => {
     set({
       people: get().people.concat(person),
@@ -18,6 +19,11 @@ const useStore = create((set, get) => ({
     set({
       planets: get().planets.concat(planet),
     });
+  },
+  addFavoriteEntity: (name) => {
+    set({
+      favorite_entity: get().favorite_entity.concat(name)
+    })
   }
 }));
 
