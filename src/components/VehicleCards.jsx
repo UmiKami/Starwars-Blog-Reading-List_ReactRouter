@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import useStore from "../store/zustand";
 import "../styles/Cards.css";
 
@@ -6,6 +7,10 @@ const VehicleCards = () => {
   const store = useStore();
 
   const [vehicles, setVehicles] = useState([]);
+
+  const getFavoriteEntity = (name) => {
+    store.addFavoriteEntity(name);
+  };
 
   useEffect(() => {
     setVehicles(store.vehicles);
@@ -38,10 +43,17 @@ const VehicleCards = () => {
                       Price: {`₹${cost_in_credits}`}
                     </span>
                   </p>
-                  <a href="/#" className="btn btn-outline-primary ">
+                  <Link
+                    to={`/vehicle-details/${index + 1}`}
+                    className="btn btn-outline-primary"
+                  >
                     Learn More!
-                  </a>
-                  <a href="/#" className="btn btn-outline-warning">
+                  </Link>
+                  <a
+                    href="/#"
+                    className="btn btn-outline-warning"
+                    onClick={() => getFavoriteEntity(name)}
+                  >
                     Add Favorite
                   </a>
                 </div>

@@ -1,4 +1,5 @@
 import {  useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import useStore from "../store/zustand";
 import "../styles/Cards.css";
 
@@ -43,9 +44,9 @@ const CharacterCards = () => {
                   <span className="d-block">{`Hair-Color: ${hair_color}`}</span>
                   <span className="d-block">{`Eye-Color: ${eye_color}`}</span>
                 </p>
-                <a href="/#" className="btn btn-outline-primary">
+                <Link to={`/character-details/${index+1}`} className="btn btn-outline-primary">
                   Learn More!
-                </a>
+                </Link>
                 <a href="/#" className="btn btn-outline-warning" onClick={()=>getFavoriteEntity(name)}>
                   Add Favorite
                 </a>

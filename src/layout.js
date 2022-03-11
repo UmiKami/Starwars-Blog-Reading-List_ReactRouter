@@ -1,10 +1,13 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ScrollToTop from './components/scrollToTop'
 import injectContext from './store/appContext';
+import './styles/details.css'
 
 // Views
 import DebugMenu from './views/DebugMenu';
-import Details from './views/Details';
+import CDetails from './views/Character-details';
+import PDetails from './views/Planet-details';
+import VDetails from './views/Vehicle-details';
 import Home from './views/Home';
 
 //create your first component
@@ -20,7 +23,9 @@ const Layout = () => {
 					<Routes>
 						<Route exact path="/" element={<Home />}></Route>
 						<Route exact path="/Home" element={<Home />}></Route>
-						<Route exact path="/Details" element={<Details />}></Route>
+						<Route exact path="/character-details/:entityId" element={<CDetails />}></Route>
+						<Route exact path="/planet-details/:entityId" element={<PDetails />}></Route>
+						<Route exact path="/vehicle-details/:entityId" element={<VDetails />}></Route>
 						<Route exact path="/Debug-menu" element={<DebugMenu />}></Route>
 					</Routes>
 				</ScrollToTop>

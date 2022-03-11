@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import useStore from "../store/zustand";
 import "../styles/Cards.css";
 
@@ -6,6 +7,10 @@ const PlanetCards = () => {
   const store = useStore();
 
   const [planets, setPlanet] = useState([]);
+
+  const getFavoriteEntity = (name) => {
+    store.addFavoriteEntity(name);
+  };
 
   useEffect(() => {
     setPlanet(store.planets);
@@ -23,9 +28,13 @@ const PlanetCards = () => {
               key={index}
             >
               <img
-                src={`https://starwars-visualguide.com/assets/img/planets/${
-                  index + 2
-                }.jpg`}
+                src={
+                  index + 2 < 20
+                    ? `https://starwars-visualguide.com/assets/img/planets/${
+                        index + 2
+                      }.jpg`
+                    : "https://starwars-visualguide.com/assets/img/placeholder.jpg"
+                }
                 className="card-img-top"
                 alt="..."
                 height={"75%"}
@@ -41,10 +50,17 @@ const PlanetCards = () => {
                   <span className="d-block">{`Population: ${population}`}</span>
                   <span className="d-block">{`Terrain: ${terrain}`}</span>
                 </p>
-                <a href="/#" className="btn btn-outline-primary ">
+                <Link
+                  to={`/planet-details/${index + 1}`}
+                  className="btn btn-outline-primary"
+                >
                   Learn More!
-                </a>
-                <a href="/#" className="btn btn-outline-warning">
+                </Link>
+                <a
+                  href="/#"
+                  className="btn btn-outline-warning"
+                  onClick={() => getFavoriteEntity(name)}
+                >
                   Add Favorite
                 </a>
               </div>
