@@ -18,8 +18,8 @@ const PlanetCards = () => {
 
   return (
     <>
-      <h2 className="section-title">Planets</h2>
-      <div className="d-flex overflow-auto">
+      <h2 className="section-title text-light">Planets</h2>
+      <div className="d-flex overflow-auto cards-container">
         {planets.map(({ name, population, terrain }, index) => {
           return (
             <div
@@ -44,25 +44,27 @@ const PlanetCards = () => {
                     "https://starwars-visualguide.com/assets/img/placeholder.jpg";
                 }}
               />
-              <div className="card-body">
+              <div className="card-body bg-dark text-light">
                 <h5 className="card-title">{name}</h5>
                 <p className="card-text">
                   <span className="d-block">{`Population: ${population}`}</span>
                   <span className="d-block">{`Terrain: ${terrain}`}</span>
                 </p>
-                <Link
-                  to={`/planet-details/${index + 1}`}
-                  className="btn btn-outline-primary"
-                >
-                  Learn More!
-                </Link>
-                <a
-                  href="/#"
-                  className="btn btn-outline-warning"
-                  onClick={() => getFavoriteEntity(name)}
-                >
-                  Add Favorite
-                </a>
+                <div className="action-buttons">
+                  <Link
+                    to={`/planet-details/${index + 1}`}
+                    className="btn btn-outline-primary btn-outline-starwars-1"
+                  >
+                    Learn More!
+                  </Link>
+                  <a
+                    href="/#"
+                    className="btn btn-outline-warning btn-outline-starwars-2"
+                    onClick={() => getFavoriteEntity(name)}
+                  >
+                    <i className="fa-regular fa-heart"></i>
+                  </a>
+                </div>
               </div>
             </div>
           );

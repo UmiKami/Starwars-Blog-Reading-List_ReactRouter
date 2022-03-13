@@ -7,9 +7,63 @@
 }
 
 .planet-card {
-  height: 54rem !important;
+  height: 63rem !important;
 }
 
-.sp{
-    font-family: 'Star Wars';
+.section-title {
+  font-size: 3.5rem;
+  border-bottom: 4px solid white;
+  width: fit-content;
+  margin-bottom: 2.5rem;
+}
+
+.cards-container:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.card-title {
+  font-size: 2.2rem;
+  font-family: "Roboto";
+  font-weight: bold;
+  color: #f3da1c;
+}
+
+.card-text {
+  line-height: 2;
+  margin-bottom: 1rem;
+}
+
+.card-body .btn-outline-primary {
+  margin-right: 24.32rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card > img {
+  border-bottom: solid 1px white;
+}
+
+.btn-outline-starwars-1,
+.btn-outline-starwars-2 {
+  border-radius: 5px;
+  font-size: 1.6rem;
+  color: #f3da1c;
+  outline: 1px solid #f3da1c;
+  border: none;
+
+  font-weight: 500;
+}
+
+.btn-outline-starwars-1:hover {
+  background: #f3da1c;
+  color: #212529;
+}
+
+.btn-outline-starwars-2-active{
+  background-color: #f3da1c;
+  color: rgb(255, 0, 128);
 }

@@ -18,8 +18,8 @@ const VehicleCards = () => {
 
   return (
     <>
-      <h2 className="section-title">Vehicles</h2>
-      <div className="d-flex overflow-auto">
+      <h2 className="section-title text-light">Vehicles</h2>
+      <div className="d-flex overflow-auto cards-container">
         {vehicles.map(
           ({ name, model, manufacturer, cost_in_credits }, index) => {
             return (
@@ -34,7 +34,7 @@ const VehicleCards = () => {
                   alt="..."
                   // height={"75%"}
                 />
-                <div className="card-body">
+                <div className="card-body bg-dark text-light">
                   <h5 className="card-title">{name}</h5>
                   <p className="card-text">
                     <span className="d-block">{`Model: ${model}`}</span>
@@ -43,19 +43,21 @@ const VehicleCards = () => {
                       Price: {`₹${cost_in_credits}`}
                     </span>
                   </p>
-                  <Link
-                    to={`/vehicle-details/${index + 1}`}
-                    className="btn btn-outline-primary"
-                  >
-                    Learn More!
-                  </Link>
-                  <a
-                    href="/#"
-                    className="btn btn-outline-warning"
-                    onClick={() => getFavoriteEntity(name)}
-                  >
-                    Add Favorite
-                  </a>
+                  <div className="action-buttons">
+                    <Link
+                      to={`/vehicle-details/${index + 1}`}
+                      className="btn btn-outline-primary btn-outline-starwars-1"
+                    >
+                      Learn More!
+                    </Link>
+                    <a
+                      href="/#"
+                      className="btn btn-outline-warning btn-outline-starwars-2"
+                      onClick={() => getFavoriteEntity(name)}
+                    >
+                      <i className="fa-regular fa-heart"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
             );

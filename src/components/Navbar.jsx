@@ -18,25 +18,25 @@ const Navbar = () => {
 	};
 
   return (
-    <nav className="navbar navbar-light bg-light container">
+    <nav className="navbar navbar-light bg-transparent container mb-5">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <img
-            src="https://logos-world.net/wp-content/uploads/2020/11/Star-Wars-Logo-1977-present.jpg"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Star_Wars_Logo..png/640px-Star_Wars_Logo..png"
             alt="star wars logo"
-            width={"60px"}
+            width={"128px"}
           />
         </Link>
         <div className="dropdown">
           <a
-            className="nav-link dropdown-toggle d-flex align-items-center bg-primary text-light"
+            className="nav-link dropdown-toggle d-flex align-items-center bg-primary bg-primary-star text-light"
             href="/"
             id="navbarDropdown"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <p className="dropdown-name">Favorites</p>
+            <p className="dropdown-name text-dark">Favorites</p>
             <div className="favCount">{favoritesList.length}</div>
           </a>
 
@@ -59,6 +59,7 @@ const Navbar = () => {
                         <i className="fa-solid fa-trash-can dropdown-text-content trash" />
                       </span>
                     </div>
+                    <div className="dropdown-divider"></div>
                   </li>
                 );
               })
