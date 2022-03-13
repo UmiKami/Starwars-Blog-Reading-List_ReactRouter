@@ -10,12 +10,12 @@ const CharacterDetails = () => {
 
   return (
     <>
+      <main className="container bg-dark main-container">
       <Navbar />
-      <main className="container">
         <section className="d-flex align-items-center gap-4">
           <img src="https://dummyimage.com/600x400/adadad/ffffff.jpg" alt="" />
-          <div className="entity-description">
-            <h1 className="text-center detail-header">
+          <div className="entity-description text-light">
+            <h1 className="text-center detail-header text-warning">
               {person && person.name}
             </h1>
             <p className="text-center detail-description">
@@ -28,11 +28,11 @@ const CharacterDetails = () => {
             </p>
           </div>
         </section>
-        <hr className="bg-danger" />
         <section className="entity-attributes">
+        <hr className="bg-warning" />
           <table className="col-12">
             <tbody>
-              <tr className="text-danger">
+              <tr className="text-warning">
                 <th>Name</th>
                 <th>Gender</th>
                 <th>Height</th>
@@ -43,7 +43,7 @@ const CharacterDetails = () => {
             </tbody>
 
             <tbody>
-              <tr>
+              <tr className="text-light">
                 <td>{person && person.name}</td>
                 <td>{person && person.gender}</td>
                 <td>{person && person.height} cm</td>

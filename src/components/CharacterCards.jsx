@@ -6,10 +6,12 @@ import "../styles/Cards.css";
 const CharacterCards = () => {
   const store = useStore();
 
+  const [clicked, setClicked] = useState(false)
   const [people, setPeople] = useState([]);
 
   const getFavoriteEntity = (name, e) => {
     store.addFavoriteEntity(name);
+    setClicked(true)
     setActiveFavorite(e);
   };
 
@@ -57,7 +59,11 @@ const CharacterCards = () => {
                   </Link>
                   <a
                     href="/#"
-                    className={`btn btn-outline-warning btn-outline-starwars-2`}
+                    className={
+                      clicked
+                        ? `btn btn-outline-warning btn-outline-starwars-2-active`
+                        : `btn btn-outline-warning btn-outline-starwars-2`
+                    }
                     onClick={(e) => getFavoriteEntity(name, e)}
                   >
                     <i className={`fa-regular fa-heart`}></i>
