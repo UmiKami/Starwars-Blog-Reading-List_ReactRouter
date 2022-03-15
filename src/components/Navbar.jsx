@@ -9,13 +9,15 @@ const Navbar = () => {
 	const [favoritesList, setFavoritesList] = useState([]);
 	
 	useEffect(()=>{
-		setFavoritesList([...new Set(store.favorite_entity)]);
-	}, [setFavoritesList, store.favorite_entity])
+		setFavoritesList(store.favorite_entity);
+	}, [store.favorite_entity])
 
   const deleteItem = (targetIndex) => {
 		// updates state of the list in the store
 		store.updateFavoriteEntity(targetIndex)
 	};
+
+  console.log(store.favorite_entity);
 
   return (
     <nav className="navbar navbar-light bg-transparent container mb-5">

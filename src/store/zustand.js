@@ -22,7 +22,7 @@ const useStore = create((set, get) => ({
   },
   addFavoriteEntity: (name) => {
     set({
-      favorite_entity: get().favorite_entity.concat(name)
+      favorite_entity: [...new Set(get().favorite_entity.concat(name))]
     })
   },
   updateFavoriteEntity: (targetIndex) => {
