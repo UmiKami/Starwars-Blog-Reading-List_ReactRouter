@@ -17,7 +17,6 @@ const Navbar = () => {
 		store.updateFavoriteEntity(targetIndex)
 	};
 
-  console.log(store.favorite_entity);
 
   return (
     <nav className="navbar navbar-light bg-transparent container mb-5">

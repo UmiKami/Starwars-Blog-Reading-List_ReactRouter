@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* outline: 1px solid red; */
 }
 
 html{
@@ -208,7 +209,7 @@ body{
   content: "";
   border-radius: 100px;
   position: absolute;
-  top: 2000px;
+  top: 100%;
   width: 1px;
   height: 1px;
   background: transparent;
@@ -457,7 +458,7 @@ body{
   content: "";
   border-radius: 100px;
   position: absolute;
-  top: 2000px;
+  top: 100%;
   width: 2px;
   height: 2px;
   background: transparent;
@@ -554,7 +555,7 @@ body{
 	content: "";
   border-radius: 100px;
   position: absolute;
-  top: 2000px;
+  top: 100%;
   width: 3px;
   height: 3px;
   background: transparent;
@@ -589,7 +590,7 @@ body{
 
 @keyframes animStar{
 	from{
-		transform: translateY(0px);
+		transform: translateY(800px);
 	}
 	to{
 		transform: translateY(-2000px);
